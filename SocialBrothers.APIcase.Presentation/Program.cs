@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using SocialBrothers.APIcase.Domain.Interfaces;
 using SocialBrothers.APIcase.Infrastructure;
+using SocialBrothers.APIcase.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     string connection_string = builder.Configuration.GetConnectionString("SQLiteDb");
     options.UseSqlite(connection_string);  
 });
+
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
