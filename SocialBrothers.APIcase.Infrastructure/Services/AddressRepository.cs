@@ -18,7 +18,7 @@ public class AddressRepository : IAddressRepository
         _appDbContext = appDbContext;
     }
     
-    public async Task<IEnumerable<Address>> GetAddressesAsync(int pageIndex = 0, int pageSize = 20)
+    public async Task<IEnumerable<Address>> GetAddressesAsync(int pageIndex = 1, int pageSize = 20)
     {
         return await _appDbContext.Addresses
             .Skip((pageIndex-1)*pageSize)
