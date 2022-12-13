@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TsbGRbXmTj6pGTuD+8gSdD7xKAFVnOcv9MwktfxnEHTGKN3iPBaTeV/xAHDuXrWG1i3UyfL6E71FOLsiKvPzyw==",
+  "dgSpecHash": "HzMveGL9LxvSdkJ15wEgWN4Zo5DxdlKCtxJ8pKUtTBNvhntbWi0Rz1x3uYxGx9ppH/UTugm3uT/W9WQw9OPLtQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Agent-47\\Documents\\C# Projects\\SocialBrothers.APIcase\\SocialBrothers.APIcase.Presentation\\SocialBrothers.APIcase.Presentation.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Agent-47\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.11\\microsoft.data.sqlite.core.6.0.11.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.11\\microsoft.entityframeworkcore.6.0.11.nupkg.sha512",

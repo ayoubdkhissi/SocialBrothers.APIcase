@@ -57,3 +57,4 @@ C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.AP
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\obj\Debug\net6.0\ref\SocialBrothers.APIcase.Presentation.dll
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\Bogus.dll

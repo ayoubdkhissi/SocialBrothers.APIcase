@@ -18,4 +18,8 @@
     <ProjectReference Include="..\SocialBrothers.APIcase.Infrastructure\SocialBrothers.APIcase.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+
 </Project>

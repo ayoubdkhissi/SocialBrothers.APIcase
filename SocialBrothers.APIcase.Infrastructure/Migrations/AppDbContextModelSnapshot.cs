@@ -28,9 +28,6 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FullAddress")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("HouseNumber")
                         .HasColumnType("INTEGER");
 
@@ -42,7 +39,13 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FullAddress");
+                    b.HasIndex("City");
+
+                    b.HasIndex("Country");
+
+                    b.HasIndex("Street");
+
+                    b.HasIndex("ZipCode");
 
                     b.ToTable("Addresses");
                 });

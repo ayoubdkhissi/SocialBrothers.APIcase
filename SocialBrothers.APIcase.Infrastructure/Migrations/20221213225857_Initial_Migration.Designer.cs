@@ -10,8 +10,8 @@ using SocialBrothers.APIcase.Infrastructure;
 namespace SocialBrothers.APIcase.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221213111944_Initial")]
-    partial class Initial
+    [Migration("20221213225857_Initial_Migration")]
+    partial class Initial_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,9 +30,6 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FullAddress")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("HouseNumber")
                         .HasColumnType("INTEGER");
 
@@ -44,7 +41,13 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FullAddress");
+                    b.HasIndex("City");
+
+                    b.HasIndex("Country");
+
+                    b.HasIndex("Street");
+
+                    b.HasIndex("ZipCode");
 
                     b.ToTable("Addresses");
                 });

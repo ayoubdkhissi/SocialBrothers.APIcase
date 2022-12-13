@@ -4,7 +4,7 @@
 
 namespace SocialBrothers.APIcase.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Initial_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,8 +18,7 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
                     HouseNumber = table.Column<int>(type: "INTEGER", nullable: false),
                     ZipCode = table.Column<int>(type: "INTEGER", nullable: false),
                     City = table.Column<string>(type: "TEXT", nullable: true),
-                    Country = table.Column<string>(type: "TEXT", nullable: true),
-                    FullAddress = table.Column<string>(type: "TEXT", nullable: true)
+                    Country = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,9 +26,24 @@ namespace SocialBrothers.APIcase.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Addresses_FullAddress",
+                name: "IX_Addresses_City",
                 table: "Addresses",
-                column: "FullAddress");
+                column: "City");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Addresses_Country",
+                table: "Addresses",
+                column: "Country");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Addresses_Street",
+                table: "Addresses",
+                column: "Street");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Addresses_ZipCode",
+                table: "Addresses",
+                column: "ZipCode");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

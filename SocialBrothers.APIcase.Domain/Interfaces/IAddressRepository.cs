@@ -1,4 +1,5 @@
-﻿using SocialBrothers.APIcase.Domain.Entities;
+﻿using SocialBrothers.APIcase.Domain.Common;
+using SocialBrothers.APIcase.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,10 @@ public interface IAddressRepository
     /// <param name="pageIndex">Page index</param>
     /// <param name="pageSize">Page size: number of items returned</param>
     /// <returns>list of Addresses</returns>
-    Task<IEnumerable<Address>> GetAddressesAsync(int pageIndex = 1, int pageSize = 20);
+    Task<IEnumerable<Address>> GetAddressesAsync(
+        PaginationParameters paginationParameters,
+        QueryParameters queryParameters,
+        SortCriteria sortCriteria);
 
     /// <summary>
     /// Get an address by id

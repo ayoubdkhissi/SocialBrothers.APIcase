@@ -32,11 +32,4 @@ public class Address
     public string City { get; set; }
 
     public string Country { get; set; }
-
-
-    public string FullAddress { get; set; }
-
-    public void BuildFullAddress()
-        => FullAddress = $"{Street} {HouseNumber} {ZipCode} {City} {Country}";
-
 }
