@@ -1,0 +1,17 @@
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.deps.json
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.runtimeconfig.json
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.pdb
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Domain.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\bin\Debug\net6.0\SocialBrothers.APIcase.Domain.pdb
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.AssemblyInfo.cs
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.csproj.CopyComplete
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\refint\SocialBrothers.APIcase.Infrastructure.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.pdb
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\SocialBrothers.APIcase.Infrastructure.genruntimeconfig.cache
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Infrastructure\obj\Debug\net6.0\ref\SocialBrothers.APIcase.Infrastructure.dll
