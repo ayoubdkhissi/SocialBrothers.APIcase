@@ -1,13 +1,15 @@
 ﻿using AutoMapper;
-using Bogus.DataSets;
+using SocialBrothers.APIcase.Domain.Entities;
 using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Profiles;
 
 public class AddressProfile : Profile
 {
-    protected AddressProfile()
+    public AddressProfile()
     {
-        CreateMap<Address, PostAddressDto>();
+        CreateMap<PostAddressDto, Address>()
+            .ForMember(source => source.Id, opt => opt.Ignore());
+
     }
 }

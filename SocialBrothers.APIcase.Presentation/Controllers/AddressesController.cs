@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialBrothers.APIcase.Domain.Common;
@@ -13,13 +15,15 @@ public class AddressesController : ControllerBase
 {
 
     private readonly IAddressRepository _addressRepository;
+    private readonly IValidator<PostAddressDto> _validator;
     private readonly IMapper _mapper;
 
 
-    public AddressesController(IAddressRepository addressRepository, IMapper mapper)
+    public AddressesController(IAddressRepository addressRepository, IMapper mapper, IValidator<PostAddressDto> validator)
     {
         _addressRepository = addressRepository;
         _mapper = mapper;
+        _validator = validator;
     }
 
     [HttpGet]
@@ -52,10 +56,30 @@ public class AddressesController : ControllerBase
         return Ok(address);
     }
 
+    [HttpPost]
     public async Task<ActionResult<Address>> PostAddress(PostAddressDto postAddressDto)
     {
+        //Validating the DTO
+        ValidationResult validationResult = await _validator.ValidateAsync(postAddressDto);
+        if(!validationResult.IsValid)
+        {
+            // return validation error messages
+            return BadRequest(validationResult.Errors.Select(e => e.ErrorMessage));
+        }
 
-        return Ok();
+        // Mapping DTO into Entity
+        var address = _mapper.Map<Address>(postAddressDto);
+
+        // Creating the item
+        bool created = await _addressRepository.InsertAddressAysnc(address);
+
+        if(!created)
+        {
+            return StatusCode(500, "Address can't be added! Due to some error");
+        }
+
+        // returning the created item
+        return Created($"~api/addresses/{address.Id}", address);
 
     }
 }
