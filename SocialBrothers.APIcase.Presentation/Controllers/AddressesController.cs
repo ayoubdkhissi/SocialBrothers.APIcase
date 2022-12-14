@@ -35,4 +35,16 @@ public class AddressesController : ControllerBase
         // we return OK 200 in all cases, even if the list is empty
         return Ok(addresses);
     }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Address>> GetAddress(int id)
+    {
+        // check if an address with the given id exists
+        var address = await _addressRepository.GetAddressAsync(id);
+        
+        if(address is null)
+            return NotFound("No address with the given id was found!");
+
+        return Ok(address);
+    }
 }

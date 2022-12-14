@@ -39,7 +39,7 @@ public class AddressRepository : IAddressRepository
          */
         
         // default SQL query
-        string sql = "select * from Addresses ";
+        StringBuilder sql_sb = new StringBuilder("select * from Addresses ");
 
         // this parameter indicates whether a where clause was introduced in the SQL expression or not
         bool where = false;
@@ -55,12 +55,12 @@ public class AddressRepository : IAddressRepository
             {
                 if(!where)
                 {
-                    sql += $"where {prop.Name} = '{val}' ";
+                    sql_sb.Append($"where {prop.Name} = '{val}' ");
                     where = true;
                 }
                 else
                 {
-                    sql += $"and {prop.Name} = '{val}' ";
+                    sql_sb.Append($"and {prop.Name} = '{val}' ");
                 }
             }
         }
@@ -69,14 +69,14 @@ public class AddressRepository : IAddressRepository
         // sorting
         if(sortCriteria.OrderBy is not null)
         {
-            sql += $"order by {sortCriteria.OrderBy} ";
+            sql_sb.Append($"order by {sortCriteria.OrderBy} ");
 
             if (sortCriteria.Desc)
-                sql += "DESC";
+                sql_sb.Append("DESC");
         }
 
         // get addresses using the raw SQL that we built
-        var addresses = _appDbContext.Addresses.FromSqlRaw(sql);
+        var addresses = _appDbContext.Addresses.FromSqlRaw(sql_sb.ToString());
 
         // Sorting
 
