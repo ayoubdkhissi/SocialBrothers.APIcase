@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialBrothers.APIcase.Domain.Common;
 using SocialBrothers.APIcase.Domain.Entities;
 using SocialBrothers.APIcase.Domain.Interfaces;
+using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Controllers;
 [Route("api/[controller]")]
@@ -11,11 +13,13 @@ public class AddressesController : ControllerBase
 {
 
     private readonly IAddressRepository _addressRepository;
-    
+    private readonly IMapper _mapper;
 
-    public AddressesController(IAddressRepository addressRepository)
+
+    public AddressesController(IAddressRepository addressRepository, IMapper mapper)
     {
         _addressRepository = addressRepository;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -46,5 +50,12 @@ public class AddressesController : ControllerBase
             return NotFound("No address with the given id was found!");
 
         return Ok(address);
+    }
+
+    public async Task<ActionResult<Address>> PostAddress(PostAddressDto postAddressDto)
+    {
+
+        return Ok();
+
     }
 }

@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "HzMveGL9LxvSdkJ15wEgWN4Zo5DxdlKCtxJ8pKUtTBNvhntbWi0Rz1x3uYxGx9ppH/UTugm3uT/W9WQw9OPLtQ==",
+  "dgSpecHash": "I3ciE+kvdFSL+RX83X8MlW2JV9C6wZcXHiabERNtsOuYDIp90KZ8QUq2+VG6ZX9jtk6160Oze6UzdhJA30+ROA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Agent-47\\Documents\\C# Projects\\SocialBrothers.APIcase\\SocialBrothers.APIcase.Presentation\\SocialBrothers.APIcase.Presentation.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Agent-47\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.11\\microsoft.data.sqlite.core.6.0.11.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.11\\microsoft.entityframeworkcore.6.0.11.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.11\\microsoft.entityframeworkcore.abstractions.6.0.11.nupkg.sha512",
