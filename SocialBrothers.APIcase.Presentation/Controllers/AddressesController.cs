@@ -15,11 +15,11 @@ public class AddressesController : ControllerBase
 {
 
     private readonly IAddressRepository _addressRepository;
-    private readonly IValidator<PostAddressDto> _validator;
+    private readonly IValidator<AddressDto> _validator;
     private readonly IMapper _mapper;
 
 
-    public AddressesController(IAddressRepository addressRepository, IMapper mapper, IValidator<PostAddressDto> validator)
+    public AddressesController(IAddressRepository addressRepository, IMapper mapper, IValidator<AddressDto> validator)
     {
         _addressRepository = addressRepository;
         _mapper = mapper;
@@ -57,29 +57,60 @@ public class AddressesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Address>> PostAddress(PostAddressDto postAddressDto)
+    public async Task<ActionResult<Address>> PostAddress(AddressDto addressDto)
     {
         //Validating the DTO
-        ValidationResult validationResult = await _validator.ValidateAsync(postAddressDto);
+        ValidationResult validationResult = await _validator.ValidateAsync(addressDto);
         if(!validationResult.IsValid)
         {
             // return validation error messages
             return BadRequest(validationResult.Errors.Select(e => e.ErrorMessage));
         }
 
-        // Mapping DTO into Entity
-        var address = _mapper.Map<Address>(postAddressDto);
+        // Mapping DTO into Address Entity
+        var address = _mapper.Map<Address>(addressDto);
 
-        // Creating the item
+        // Creating the item in DB
         bool created = await _addressRepository.InsertAddressAysnc(address);
 
         if(!created)
         {
-            return StatusCode(500, "Address can't be added! Due to some error");
+            return StatusCode(500, "Address can't be added! some error has occured");
         }
 
-        // returning the created item
+        // returning the created item (201 Created)
         return Created($"~api/addresses/{address.Id}", address);
 
     }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateAddress(int id, AddressDto addressDto)
+    {
+        // Check if the address exist
+        var address = await _addressRepository.GetAddressAsync(id);
+
+        if(address is null)
+        {
+            return NotFound("No address with the given id was found!");
+        }
+
+        // Validate the passed DTO
+        ValidationResult validationResult = await _validator.ValidateAsync(addressDto);
+        if (!validationResult.IsValid)
+        {
+            // return validation error messages
+            return BadRequest(validationResult.Errors.Select(e => e.ErrorMessage));
+        }
+
+        // Mapping the passed DTO to the address retrieved from database
+        _mapper.Map(addressDto, address);
+
+        // Update the address
+        await _addressRepository.UpdateAddressAysnc(address);
+
+
+        return Ok("The address was successfuly updated");
+        // we can also return NoContent() 204.
+    }
+
 }

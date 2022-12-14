@@ -3,9 +3,9 @@ using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Validators;
 
-public class PostAddressDtoValidator : AbstractValidator<PostAddressDto>
+public class AddressDtoValidator : AbstractValidator<AddressDto>
 {
-    public PostAddressDtoValidator()
+    public AddressDtoValidator()
     {
         // Validating street field : not null, not empty and its length does not exceed 200
         RuleFor(dto => dto.Street)

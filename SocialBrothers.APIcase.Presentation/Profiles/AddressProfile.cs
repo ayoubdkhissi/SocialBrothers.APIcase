@@ -8,7 +8,7 @@ public class AddressProfile : Profile
 {
     public AddressProfile()
     {
-        CreateMap<PostAddressDto, Address>()
+        CreateMap<AddressDto, Address>()
             .ForMember(source => source.Id, opt => opt.Ignore());
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace SocialBrothers.APIcase.Presentation.DTOs;
 
-public class PostAddressDto
+public class AddressDto
 {
     public string Street { get; set; }
 

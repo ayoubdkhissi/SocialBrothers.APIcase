@@ -21,7 +21,7 @@ builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<IValidator<PostAddressDto>, PostAddressDtoValidator>();
+builder.Services.AddScoped<IValidator<AddressDto>, AddressDtoValidator>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
