@@ -75,7 +75,7 @@ public class AddressesController : ControllerBase
 
         if(!created)
         {
-            return StatusCode(500, "Address can't be added! some error has occured");
+            return StatusCode(500, "Address can't be added! some error has occurred");
         }
 
         // returning the created item (201 Created)
@@ -111,6 +111,29 @@ public class AddressesController : ControllerBase
 
         return Ok("The address was successfuly updated");
         // we can also return NoContent() 204.
+    }
+
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteAddress(int id)
+    {
+        // Check if the address exist
+        var address = await _addressRepository.GetAddressAsync(id);
+
+        if (address is null)
+        {
+            return NotFound("No address with the given id was found!");
+        }
+
+        bool deleted = await _addressRepository.DeteleAddressAsync(address);
+
+        if(!deleted)
+        {
+            return StatusCode(500, "Address can't be deleted! some error has occurred");
+        }
+
+        return Ok("Address was successfully deleted");
+        // we can also return a NoContent() 204.
     }
 
 }
