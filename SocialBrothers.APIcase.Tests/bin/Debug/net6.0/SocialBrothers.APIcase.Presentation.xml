@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SocialBrothers.APIcase.Presentation</name>
+    </assembly>
+    <members>
+        <member name="T:SocialBrothers.APIcase.Presentation.Controllers.AddressesController">
+            <summary>
+            Controller with CRUD actions for Addresses
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.#ctor(SocialBrothers.APIcase.Domain.Interfaces.IAddressRepository,AutoMapper.IMapper,FluentValidation.IValidator{SocialBrothers.APIcase.Presentation.DTOs.AddressDto},System.Net.Http.HttpClient,Microsoft.Extensions.Logging.ILogger{SocialBrothers.APIcase.Presentation.Controllers.AddressesController})">
+            <summary>
+            Constructor used to inject services
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters,SocialBrothers.APIcase.Domain.Common.QueryParameters,SocialBrothers.APIcase.Domain.Common.SortCriteria)">
+            <summary>
+            Get a list of addresses
+            </summary>
+            <param name="paginationParameters">Object defining the page number and the page size</param>
+            <param name="queryParameters">object defining search parameters</param>
+            <param name="sortCriteria">object defining sort criteria</param>
+            <returns>List of addresses, empty list if there were none</returns>
+            <response code="200">Returns the list of addresses</response>
+            <response code="400">the orderBy criteria was invalid</response>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddress(System.Int32)">
+            <summary>
+            Get an address by id
+            </summary>
+            <param name="id">The id of the address to get</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the requested address</response>
+            <response code="400">If no city with the given id was found</response>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.PostAddress(SocialBrothers.APIcase.Presentation.DTOs.AddressDto)">
+            <summary>
+            Add a new address
+            </summary>
+            <param name="addressDto">object representing address properties</param>
+            <returns>An Action result</returns>
+            <response code="201">Returns the newly created address</response>
+            <response code="400">some address properties are invalid</response>
+            <response code="500">the address could not be added due to some server error</response>
+            
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.UpdateAddress(System.Int32,SocialBrothers.APIcase.Presentation.DTOs.AddressDto)">
+            <summary>
+            Update an existing address
+            </summary>
+            <param name="id">the id of the address you want to update</param>
+            <param name="addressDto">object representing address properties</param>
+            <returns>An ActionResult</returns>
+            <response code="200">Returns the updated address</response>
+            <response code="400">Some address properties were invalid</response>
+            <response code="404">No address with the given id was found</response>
+            
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.DeleteAddress(System.Int32)">
+            <summary>
+            Delete an address by id
+            </summary>
+            <param name="id">The id of the address you want to delete</param>
+            <returns>An Action result</returns>
+            <response code="200">The address was successfully deleted</response>
+            <response code="404">No address with the given id was found</response>
+            <response code="500">The address could not be deleted due to some server error</response>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetDistance(System.Int32,System.Int32)">
+            <summary>
+            Get the distance between two addresses origin and destination
+            </summary>
+            <param name="originId">id of the origin address</param>
+            <param name="destinationId">if of the destination address</param>
+            <returns>An ActionResult</returns>
+            <response code="200">
+            Returns an object containing the distance between the origin and the destination address,
+            as well as the two addresses
+            </response>
+            <response code="400">Ids of the origin and destination addresses were not provided</response>
+            <response code="404">
+            One or both addresses were not found.
+            or the distance could not be calculated because the addresses are not valid
+            </response>
+            <response code="500">The distance could not be calculated due to some server error.</response>
+            
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.DTOs.AddressDto">
+            <summary>
+            Data Transfer object for an Address entity.
+            it is used for Post and Put, It has the same properties as an Address entity except for the id.
+            but usually DTOs and Entities can have different properties. 
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.Street">
+            <summary>
+            String representing the street name
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.HouseNumber">
+            <summary>
+            Integer representing the house number
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.ZipCode">
+            <summary>
+            Integer representing the Zip Code  
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.City">
+            <summary>
+            String repressing city name
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.Country">
+            <summary>
+            String representing country name
+            </summary>
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.Profiles.AddressProfile">
+            <summary>
+            Class containing Mapping rules for an Address
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Profiles.AddressProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.Validators.AddressDtoValidator">
+            <summary>
+            Class containing validation rules for an AddressDTO object
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Validators.AddressDtoValidator.#ctor">
+            <summary>
+            Constructor 
+            </summary>
+        </member>
+    </members>
+</doc>

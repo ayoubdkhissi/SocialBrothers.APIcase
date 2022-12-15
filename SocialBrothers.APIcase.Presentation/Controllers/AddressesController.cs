@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Bogus.Bson;
 using FluentValidation;
 using FluentValidation.Results;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using SocialBrothers.APIcase.Domain.Common;

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "SocialBrothers.APIcase.Infrastructure/1.0.0": {
         "dependencies": {
-          "Bogus": "34.0.2",
           "Microsoft.EntityFrameworkCore": "6.0.11",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.11",
@@ -16,14 +15,6 @@
         },
         "runtime": {
           "SocialBrothers.APIcase.Infrastructure.dll": {}
-        }
-      },
-      "Bogus/34.0.2": {
-        "runtime": {
-          "lib/net6.0/Bogus.dll": {
-            "assemblyVersion": "34.0.2.0",
-            "fileVersion": "34.0.2.0"
-          }
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -387,13 +378,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Bogus/34.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2KQAuMn3fLAQ2r6jeiffZnpv0bi3GCW3iRB2v1KeHIEBu8MNTh9dBlLTZwGvM0pr+9doKkU8L5JgCURmTmT88A==",
-      "path": "bogus/34.0.2",
-      "hashPath": "bogus.34.0.2.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

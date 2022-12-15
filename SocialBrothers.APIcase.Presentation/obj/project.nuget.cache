@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5I9NsVjb6MOTpFVnSqPKoK85d0140NVRVw6qHhLyof3wy6y0YRpgvvQycxI2kthlZxkMqbH2hE7FK7YvPYy5AQ==",
+  "dgSpecHash": "bNZGiUtmOdRT+A/Do8rpSFLuQyIeRDP2V/jTfMjupcU4un8i0x7uPVq6E2gOJprhFzLKxR78Ic5oqce4hsVHYw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Agent-47\\Documents\\C# Projects\\SocialBrothers.APIcase\\SocialBrothers.APIcase.Presentation\\SocialBrothers.APIcase.Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Agent-47\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
-    "C:\\Users\\Agent-47\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
