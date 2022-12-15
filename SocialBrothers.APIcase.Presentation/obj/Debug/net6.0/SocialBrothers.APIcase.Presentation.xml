@@ -4,6 +4,16 @@
         <name>SocialBrothers.APIcase.Presentation</name>
     </assembly>
     <members>
+        <member name="T:SocialBrothers.APIcase.Presentation.Controllers.AddressesController">
+            <summary>
+            Controller with CRUD actions for Addresses
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.#ctor(SocialBrothers.APIcase.Domain.Interfaces.IAddressRepository,AutoMapper.IMapper,FluentValidation.IValidator{SocialBrothers.APIcase.Presentation.DTOs.AddressDto},System.Net.Http.HttpClient,Microsoft.Extensions.Logging.ILogger{SocialBrothers.APIcase.Presentation.Controllers.AddressesController})">
+            <summary>
+            Constructor used to inject services
+            </summary>
+        </member>
         <member name="M:SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters,SocialBrothers.APIcase.Domain.Common.QueryParameters,SocialBrothers.APIcase.Domain.Common.SortCriteria)">
             <summary>
             Get a list of addresses
@@ -75,6 +85,58 @@
             </response>
             <response code="500">The distance could not be calculated due to some server error.</response>
             
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.DTOs.AddressDto">
+            <summary>
+            Data Transfer object for an Address entity.
+            it is used for Post and Put, It has the same properties as an Address entity except for the id.
+            but usually DTOs and Entities can have different properties. 
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.Street">
+            <summary>
+            String representing the street name
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.HouseNumber">
+            <summary>
+            Integer representing the house number
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.ZipCode">
+            <summary>
+            Integer representing the Zip Code  
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.City">
+            <summary>
+            String repressing city name
+            </summary>
+        </member>
+        <member name="P:SocialBrothers.APIcase.Presentation.DTOs.AddressDto.Country">
+            <summary>
+            String representing country name
+            </summary>
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.Profiles.AddressProfile">
+            <summary>
+            Class containing Mapping rules for an Address
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Profiles.AddressProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:SocialBrothers.APIcase.Presentation.Validators.AddressDtoValidator">
+            <summary>
+            Class containing validation rules for an AddressDTO object
+            </summary>
+        </member>
+        <member name="M:SocialBrothers.APIcase.Presentation.Validators.AddressDtoValidator.#ctor">
+            <summary>
+            Constructor 
+            </summary>
         </member>
     </members>
 </doc>

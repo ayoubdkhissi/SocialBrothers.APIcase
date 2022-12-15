@@ -11,6 +11,10 @@ using SocialBrothers.APIcase.Domain.Interfaces;
 using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Controllers;
+
+/// <summary>
+/// Controller with CRUD actions for Addresses
+/// </summary>
 [Route("api/[controller]")]
 [ApiController]
 public class AddressesController : ControllerBase
@@ -20,19 +24,24 @@ public class AddressesController : ControllerBase
     private readonly IMapper _mapper;
     private readonly HttpClient _httpClient;
     private readonly IValidator<AddressDto> _validator;
+    private readonly ILogger<AddressesController> _logger;
     private readonly IAddressRepository _addressRepository;
 
 
-    // Injecting services via constructor
-    public AddressesController(IAddressRepository addressRepository, 
-        IMapper mapper, 
-        IValidator<AddressDto> validator, 
-        HttpClient httpClient)
+    /// <summary>
+    /// Constructor used to inject services
+    /// </summary>
+    public AddressesController(IAddressRepository addressRepository,
+        IMapper mapper,
+        IValidator<AddressDto> validator,
+        HttpClient httpClient,
+        ILogger<AddressesController> logger)
     {
         _addressRepository = addressRepository;
         _mapper = mapper;
         _validator = validator;
         _httpClient = httpClient;
+        _logger = logger;
     }
 
 
@@ -46,13 +55,15 @@ public class AddressesController : ControllerBase
     /// <response code="200">Returns the list of addresses</response>
     /// <response code="400">the orderBy criteria was invalid</response>
     [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Address>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<Address>>> GetAddresses(
         [FromQuery] PaginationParameters paginationParameters,
         [FromQuery] QueryParameters queryParameters,
         [FromQuery] SortCriteria sortCriteria)
     {
+
+        _logger.LogInformation("GetAddresses Method is invoked with parameters {@params}", new {paginationParameters, queryParameters, sortCriteria });
 
         // orderBy value specified must be one of the address fields
         if (sortCriteria.OrderBy != null && !queryParameters.GetType().GetProperties().Any(x => x.Name.ToLower() == sortCriteria.OrderBy.ToLower()))
@@ -75,15 +86,20 @@ public class AddressesController : ControllerBase
     /// <response code="200">Returns the requested address</response>
     /// <response code="400">If no city with the given id was found</response>
     [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Address))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<Address>> GetAddress(int id)
     {
+
+        _logger.LogInformation($"GetAddress method is invoked with the id = {id}");
+
         // check if an address with the given id exists
         var address = await _addressRepository.GetAddressAsync(id);
         
         if(address is null)
+        {
             return NotFound("No address with the given id was found!");
+        }
 
         return Ok(address);
     }
@@ -99,11 +115,14 @@ public class AddressesController : ControllerBase
     /// <response code="500">the address could not be added due to some server error</response>
     /// 
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Address))]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<Address>> PostAddress(AddressDto addressDto)
     {
+
+        _logger.LogWarning("Post address method is invoked with parameter {@params}", addressDto);
+
         //Validating the DTO
         ValidationResult validationResult = await _validator.ValidateAsync(addressDto);
         if(!validationResult.IsValid)
@@ -139,11 +158,14 @@ public class AddressesController : ControllerBase
     /// <response code="404">No address with the given id was found</response>
     /// 
     [HttpPut("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Address))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> UpdateAddress(int id, AddressDto addressDto)
     {
+
+        _logger.LogInformation("UpdateAddress method is invoked with parameters {@params}", new { id, addressDto });
+
         // Check if the address exist
         var address = await _addressRepository.GetAddressAsync(id);
 
@@ -186,6 +208,9 @@ public class AddressesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> DeleteAddress(int id)
     {
+
+        _logger.LogInformation("DeleteAddress method is invoked with params {@params}", id);
+
         // Check if the address exist
         var address = await _addressRepository.GetAddressAsync(id);
 
@@ -225,12 +250,14 @@ public class AddressesController : ControllerBase
     /// <response code="500">The distance could not be calculated due to some server error.</response>
     /// 
     [HttpGet("distance")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DistanceStats))]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<double>> GetDistance(int originId, int destinationId)
     {
+        _logger.LogInformation("GetDistance method is invoked with params {@params}", new { originId, destinationId });
+
         // id1 and id2 should not be null
         if(originId == 0 || destinationId == 0)
         {

@@ -1,5 +1,6 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using SocialBrothers.APIcase.Domain.Interfaces;
 using SocialBrothers.APIcase.Infrastructure;
 using SocialBrothers.APIcase.Infrastructure.Services;
@@ -8,7 +9,16 @@ using SocialBrothers.APIcase.Presentation.DTOs;
 using SocialBrothers.APIcase.Presentation.Validators;
 using System.Reflection;
 
+// Configuring logger
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File("logs/addressAPI.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
 
 // Add services to the container
 builder.Services.AddControllers();

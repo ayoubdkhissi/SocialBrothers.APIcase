@@ -21,17 +21,36 @@ namespace SocialBrothers.APIcase.Domain.Entities;
 /// </summary>
 public class Address
 {
+    /// <summary>
+    /// Unique identifier of an address
+    /// </summary>
     public int Id { get; set; }
 
+    /// <summary>
+    /// String representing the street name of the address
+    /// </summary>
     public string Street { get; set; }
 
+    /// <summary>
+    /// Integer representing the house number of the address
+    /// </summary>
     public int HouseNumber { get; set; }
 
+    /// <summary>
+    /// Integer representing the Zip Code of the address
+    /// </summary>
     public int ZipCode { get; set; }
 
+    /// <summary>
+    /// String repressing city name of the address
+    /// </summary>
     public string City { get; set; }
 
+    /// <summary>
+    /// String representing country name of the address
+    /// </summary>
     public string Country { get; set; }
+
 
     public override string ToString()
     {

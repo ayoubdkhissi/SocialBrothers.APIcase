@@ -3,8 +3,14 @@ using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Validators;
 
+/// <summary>
+/// Class containing validation rules for an AddressDTO object
+/// </summary>
 public class AddressDtoValidator : AbstractValidator<AddressDto>
 {
+    /// <summary>
+    /// Constructor 
+    /// </summary>
     public AddressDtoValidator()
     {
         // Validating street field : not null, not empty and its length does not exceed 200
