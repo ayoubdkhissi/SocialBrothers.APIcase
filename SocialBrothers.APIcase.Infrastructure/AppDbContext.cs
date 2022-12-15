@@ -36,38 +36,38 @@ public class AppDbContext : DbContext
                 new Address
                 {
                     Id = 1,
-                    Street = "Laazifat",
-                    City = "Tangier",
-                    Country = "Morocco",
-                    HouseNumber = 12,
-                    ZipCode = 90000
+                    Street = "Brockton Avenue",
+                    City = "Abington MA",
+                    Country = "United States",
+                    HouseNumber = 777,
+                    ZipCode = 96522
                 },
                 new Address
                 {
                     Id = 2,
-                    Street = "Los Santos",
-                    City = "California",
-                    Country = "USA",
-                    HouseNumber = 77,
-                    ZipCode = 91100
+                    Street = "Memorial Drive",
+                    City = "Avon MA",
+                    Country = "United States",
+                    HouseNumber = 30,
+                    ZipCode = 2322
                 },
                 new Address
                 {
                     Id = 3,
-                    Street = "Chiko",
-                    City = "Las Vegas",
-                    Country = "USA",
-                    HouseNumber = 172,
-                    ZipCode = 45855
+                    Street = "Hartford Avenue",
+                    City = " Bellingham MA",
+                    Country = "United States",
+                    HouseNumber = 250,
+                    ZipCode = 2019
                 },
                 new Address
                 {
                     Id = 4,
-                    Street = "Kacman",
-                    City = "Tehran",
-                    Country = "Iran",
-                    HouseNumber = 172,
-                    ZipCode = 85255
+                    Street = "Oak Street",
+                    City = "Brockton MA",
+                    Country = "United States",
+                    HouseNumber = 700,
+                    ZipCode = 2301
                 }
             );
         });

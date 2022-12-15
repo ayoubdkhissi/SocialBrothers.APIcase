@@ -35,6 +35,6 @@ public class Address
 
     public override string ToString()
     {
-        return $"{Street} {HouseNumber} {City} {Country} {ZipCode}";
+        return $"{HouseNumber} {Street}, {City} {ZipCode} {Country}";
     }
 }

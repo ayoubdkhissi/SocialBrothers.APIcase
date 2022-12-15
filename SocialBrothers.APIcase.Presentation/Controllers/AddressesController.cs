@@ -16,12 +16,14 @@ namespace SocialBrothers.APIcase.Presentation.Controllers;
 public class AddressesController : ControllerBase
 {
 
-    private readonly IAddressRepository _addressRepository;
-    private readonly IValidator<AddressDto> _validator;
+    // Private Services to be injected
     private readonly IMapper _mapper;
     private readonly HttpClient _httpClient;
+    private readonly IValidator<AddressDto> _validator;
+    private readonly IAddressRepository _addressRepository;
 
 
+    // Injecting services via constructor
     public AddressesController(IAddressRepository addressRepository, 
         IMapper mapper, 
         IValidator<AddressDto> validator, 
@@ -33,7 +35,19 @@ public class AddressesController : ControllerBase
         _httpClient = httpClient;
     }
 
+
+    /// <summary>
+    /// Get a list of addresses
+    /// </summary>
+    /// <param name="paginationParameters">Object defining the page number and the page size</param>
+    /// <param name="queryParameters">object defining search parameters</param>
+    /// <param name="sortCriteria">object defining sort criteria</param>
+    /// <returns>List of addresses, empty list if there were none</returns>
+    /// <response code="200">Returns the list of addresses</response>
+    /// <response code="400">the orderBy criteria was invalid</response>
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<Address>>> GetAddresses(
         [FromQuery] PaginationParameters paginationParameters,
         [FromQuery] QueryParameters queryParameters,
@@ -51,7 +65,18 @@ public class AddressesController : ControllerBase
         return Ok(addresses);
     }
 
+
+
+    /// <summary>
+    /// Get an address by id
+    /// </summary>
+    /// <param name="id">The id of the address to get</param>
+    /// <returns>An ActionResult</returns>
+    /// <response code="200">Returns the requested address</response>
+    /// <response code="400">If no city with the given id was found</response>
     [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<Address>> GetAddress(int id)
     {
         // check if an address with the given id exists
@@ -63,7 +88,20 @@ public class AddressesController : ControllerBase
         return Ok(address);
     }
 
+
+    /// <summary>
+    /// Add a new address
+    /// </summary>
+    /// <param name="addressDto">object representing address properties</param>
+    /// <returns>An Action result</returns>
+    /// <response code="201">Returns the newly created address</response>
+    /// <response code="400">some address properties are invalid</response>
+    /// <response code="500">the address could not be added due to some server error</response>
+    /// 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<Address>> PostAddress(AddressDto addressDto)
     {
         //Validating the DTO
@@ -90,7 +128,20 @@ public class AddressesController : ControllerBase
 
     }
 
+    /// <summary>
+    /// Update an existing address
+    /// </summary>
+    /// <param name="id">the id of the address you want to update</param>
+    /// <param name="addressDto">object representing address properties</param>
+    /// <returns>An ActionResult</returns>
+    /// <response code="200">Returns the updated address</response>
+    /// <response code="400">Some address properties were invalid</response>
+    /// <response code="404">No address with the given id was found</response>
+    /// 
     [HttpPut("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult> UpdateAddress(int id, AddressDto addressDto)
     {
         // Check if the address exist
@@ -121,7 +172,18 @@ public class AddressesController : ControllerBase
     }
 
 
+    /// <summary>
+    /// Delete an address by id
+    /// </summary>
+    /// <param name="id">The id of the address you want to delete</param>
+    /// <returns>An Action result</returns>
+    /// <response code="200">The address was successfully deleted</response>
+    /// <response code="404">No address with the given id was found</response>
+    /// <response code="500">The address could not be deleted due to some server error</response>
     [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult> DeleteAddress(int id)
     {
         // Check if the address exist
@@ -143,7 +205,30 @@ public class AddressesController : ControllerBase
         // we can also return a NoContent() 204.
     }
 
+
+
+    /// <summary>
+    /// Get the distance between two addresses origin and destination
+    /// </summary>
+    /// <param name="originId">id of the origin address</param>
+    /// <param name="destinationId">if of the destination address</param>
+    /// <returns>An ActionResult</returns>
+    /// <response code="200">
+    /// Returns an object containing the distance between the origin and the destination address,
+    /// as well as the two addresses
+    /// </response>
+    /// <response code="400">Ids of the origin and destination addresses were not provided</response>
+    /// <response code="404">
+    /// One or both addresses were not found.
+    /// or the distance could not be calculated because the addresses are not valid
+    /// </response>
+    /// <response code="500">The distance could not be calculated due to some server error.</response>
+    /// 
     [HttpGet("distance")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<double>> GetDistance(int originId, int destinationId)
     {
         // id1 and id2 should not be null
@@ -183,23 +268,23 @@ public class AddressesController : ControllerBase
                 /*
                  * We know exactly the JSON tree structure of each response possible,
                  * according to the documentation here : https://distancematrix.ai/distance-matrix-api#responses
-                 * so we can use the following line to traverse and get the status of the request
+                 * so we can traverse the response safely and get the status of the request
                  */
-                JValue status = (JValue)joResponse["rows"][0]["elements"][0]["status"];
+                JValue status = (JValue)joResponse["rows"]![0]!["elements"]![0]!["status"]!;
 
 
                 // constructing our Distance Statistics object. it does not contain the distance yet
                 var distanceStats = new DistanceStats()
                 {
-                    OriginAddress = joResponse["origin_addresses"][0].ToString(),
-                    DestinationAddress = joResponse["destination_addresses"][0].ToString()
+                    OriginAddress = joResponse["origin_addresses"]![0]!.ToString(),
+                    DestinationAddress = joResponse["destination_addresses"]![0]!.ToString()
                 };
 
                 // if the status is equal to OK it means that the API has found a distance between the two address
                 if (status.ToString().Equals("OK"))
                 {
                     // get the distance and return the stats 
-                    distanceStats.Distance = joResponse["rows"][0]["elements"][0]["distance"].ToString();
+                    distanceStats.Distance = joResponse["rows"]![0]!["elements"]![0]!["distance"]!["text"]!.ToString();
 
                     return Ok(distanceStats);
                 }
@@ -214,7 +299,7 @@ public class AddressesController : ControllerBase
         {
             // log that the call to the API has failed
 
-            return NotFound("Oops! We can't calculate the distance between the two specified addresses");
+            return StatusCode(500, "Oops! We can't calculate the distance between the two specified addresses");
         }
         
 
