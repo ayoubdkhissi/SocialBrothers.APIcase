@@ -63,3 +63,4 @@ C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.AP
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\bin\Debug\net6.0\Newtonsoft.Json.dll

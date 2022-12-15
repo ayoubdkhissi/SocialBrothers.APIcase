@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I3ciE+kvdFSL+RX83X8MlW2JV9C6wZcXHiabERNtsOuYDIp90KZ8QUq2+VG6ZX9jtk6160Oze6UzdhJA30+ROA==",
+  "dgSpecHash": "tdFaOLFlrObSxqk8ii10n3uCqmCfUgNsj4OmWBIzHBM5aF46yHp0yX3q9fOm4y773L+nwZDxSdf6FXncMH9Y8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Agent-47\\Documents\\C# Projects\\SocialBrothers.APIcase\\SocialBrothers.APIcase.Presentation\\SocialBrothers.APIcase.Presentation.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Agent-47\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Agent-47\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

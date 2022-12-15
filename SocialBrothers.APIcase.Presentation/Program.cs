@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SocialBrothers.APIcase.Domain.Interfaces;
 using SocialBrothers.APIcase.Infrastructure;
 using SocialBrothers.APIcase.Infrastructure.Services;
+using SocialBrothers.APIcase.Presentation.Controllers;
 using SocialBrothers.APIcase.Presentation.DTOs;
 using SocialBrothers.APIcase.Presentation.Validators;
 
@@ -22,6 +23,8 @@ builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IValidator<AddressDto>, AddressDtoValidator>();
+
+builder.Services.AddHttpClient<AddressesController>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
