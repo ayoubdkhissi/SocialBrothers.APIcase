@@ -20,7 +20,7 @@ Swagger UI will be opened showing a list of all the end points and **Full Docume
 I have used a light-weigth version of clean architecture with only 3 layers Domain(core), Infrastructure, and Presentation.
 * Domain: contains entities defining the shchema, Interfaces defining services(Repository Service Interface), and also other common classes used by all layers
 * Infrastructure: contains the Db context and the implementation of the repository pattern
-* Presentation: contains the WEB API (Controllers, Profiles, Validators, DTOs)
+* Presentation: contains the WEB API (Controllers, Profiles, Validators, DTOs...)
 
 
 ## Part 1: API General CRUD
