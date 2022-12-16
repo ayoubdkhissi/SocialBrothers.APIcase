@@ -2,7 +2,7 @@
 Ayoub DKHISSI - .NET/C# API Case, an assignment to show back-end skills for traineeship at Social Brothers.
 
 ## overview
-This project is a Web REST API built with (C#/.NET) used to manage Addrresses, It gives the possibility to Get, Add, Update, Delete an address, and also search, filter and sort through addresses, and also calculating the distance (in Km) between two previously added addresses by using another Geolocation API.
+This project is a Web REST API built with (C#/.NET) used to manage Addrresses, It gives the possibility to Get, Add, Update, Delete an address, search, filter and sort addresses, and also calculating the distance (in Km) between two previously added addresses by using another Geolocation API.
 
 ## How to start and test the project.
 1. Clone the repository.
