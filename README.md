@@ -25,7 +25,7 @@ I have used a light-weigth version of clean architecture with only 3 layers Doma
 
 ## Part 1: API General CRUD
 
-* All controller actions are asynchrounous, because they use data access (through the injected repository). data access methods should ll be asynchrounous because we always need to free and offload work from the main thread.
+* All controller actions are asynchrounous, because they use data access (through the injected repository). data access methods should all be asynchrounous because we always need to free and offload work from the main thread, and also I/O operations can be expensive sometimes
 * I have created a DTO of the Address entity to be used in the post and update method, and for mapping the DTO to an entity I have Used **AutoMapper**
 * **Validation**: For validating requests (DTOs) adn entities, I have used **Fluent Validation**, I could have used attributes/annotations, but they break the rule of separation of concerns, because they introduce validation logic in entities, and also fluent validation gives you more options and flexibility.
 *  Every action is well commented and documented. I tried to make the code as clean as possible, and I followed all naming conventions of C#/.NET.
