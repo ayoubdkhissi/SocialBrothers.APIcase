@@ -199,3 +199,14 @@ LIMIT @__p_2 OFFSET @__p_1
 2022-12-16 01:02:48.868 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 16.8046ms
 2022-12-16 01:02:48.869 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
 2022-12-16 01:02:48.870 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?OrderBy=zipcode - - - 200 - application/json;+charset=utf-8 23.2399ms
+2022-12-16 10:09:06.694 +01:00 [INF] Now listening on: https://localhost:7222
+2022-12-16 10:09:06.749 +01:00 [INF] Now listening on: http://localhost:5222
+2022-12-16 10:09:06.756 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 10:09:06.757 +01:00 [INF] Hosting environment: Development
+2022-12-16 10:09:06.757 +01:00 [INF] Content root path: C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\
+2022-12-16 10:09:09.251 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/swagger/index.html - -
+2022-12-16 10:09:09.479 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/swagger/index.html - - - 200 - text/html;charset=utf-8 230.9177ms
+2022-12-16 10:09:09.492 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/_framework/aspnetcore-browser-refresh.js - -
+2022-12-16 10:09:09.496 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/_framework/aspnetcore-browser-refresh.js - - - 200 12040 application/javascript;+charset=utf-8 4.5790ms
+2022-12-16 10:09:09.574 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/swagger/v1/swagger.json - -
+2022-12-16 10:09:09.727 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 153.3567ms
