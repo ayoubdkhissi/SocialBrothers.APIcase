@@ -1,4 +1,8 @@
-﻿using FluentValidation;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+
+using FluentValidation;
 using SocialBrothers.APIcase.Presentation.DTOs;
 
 namespace SocialBrothers.APIcase.Presentation.Validators;

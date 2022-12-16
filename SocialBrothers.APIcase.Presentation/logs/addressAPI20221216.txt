@@ -1,0 +1,201 @@
+2022-12-16 01:00:27.357 +01:00 [INF] Now listening on: https://localhost:7222
+2022-12-16 01:00:27.398 +01:00 [INF] Now listening on: http://localhost:5222
+2022-12-16 01:00:27.402 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-16 01:00:27.402 +01:00 [INF] Hosting environment: Development
+2022-12-16 01:00:27.403 +01:00 [INF] Content root path: C:\Users\Agent-47\Documents\C# Projects\SocialBrothers.APIcase\SocialBrothers.APIcase.Presentation\
+2022-12-16 01:00:30.236 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/swagger/index.html - -
+2022-12-16 01:00:30.653 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/swagger/index.html - - - 200 - text/html;charset=utf-8 420.5601ms
+2022-12-16 01:00:30.680 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/_framework/aspnetcore-browser-refresh.js - -
+2022-12-16 01:00:30.680 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/_vs/browserLink - -
+2022-12-16 01:00:30.695 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/_framework/aspnetcore-browser-refresh.js - - - 200 12040 application/javascript;+charset=utf-8 14.2127ms
+2022-12-16 01:00:30.842 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 161.2426ms
+2022-12-16 01:00:30.908 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/swagger/v1/swagger.json - -
+2022-12-16 01:00:31.047 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 139.2674ms
+2022-12-16 01:01:04.456 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses - -
+2022-12-16 01:01:04.468 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:04.497 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:05.215 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:05.347 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:05.515 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:05.743 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:05.746 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:05.917 +01:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:05.971 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:05.980 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 1476.0425ms
+2022-12-16 01:01:05.981 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:05.988 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses - - - 200 - application/json;+charset=utf-8 1532.1520ms
+2022-12-16 01:01:16.123 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?Street=Brockton%20Avenue - -
+2022-12-16 01:01:16.128 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:16.130 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:16.145 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:16.149 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:16.158 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":"Brockton Avenue","HouseNumber":null,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:16.165 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:16.166 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:16.169 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where Street = 'Brockton Avenue' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:16.171 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:16.173 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 41.3466ms
+2022-12-16 01:01:16.174 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:16.174 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?Street=Brockton%20Avenue - - - 200 - application/json;+charset=utf-8 51.3175ms
+2022-12-16 01:01:23.659 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses - -
+2022-12-16 01:01:23.660 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:23.661 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:23.702 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:23.709 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:23.710 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:23.718 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:23.719 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:23.720 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 57.4592ms
+2022-12-16 01:01:23.722 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:23.722 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses - - - 200 - application/json;+charset=utf-8 63.3436ms
+2022-12-16 01:01:37.054 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?Street=Teaticket%20Hwy - -
+2022-12-16 01:01:37.055 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:37.055 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:37.057 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:37.059 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:37.061 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":"Teaticket Hwy","HouseNumber":null,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:37.066 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:37.067 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:37.069 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where Street = 'Teaticket Hwy' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:37.071 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:37.072 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 14.5639ms
+2022-12-16 01:01:37.073 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:37.073 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?Street=Teaticket%20Hwy - - - 200 - application/json;+charset=utf-8 19.3353ms
+2022-12-16 01:01:45.324 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?Street=Teaticket%20Hwy&HouseNumber=137 - -
+2022-12-16 01:01:45.325 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:45.326 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:45.328 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:45.330 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:45.332 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":"Teaticket Hwy","HouseNumber":137,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:45.339 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:45.341 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:45.343 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where Street = 'Teaticket Hwy' and HouseNumber = '137' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:45.344 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:45.345 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 17.3127ms
+2022-12-16 01:01:45.346 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:45.347 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?Street=Teaticket%20Hwy&HouseNumber=137 - - - 200 - application/json;+charset=utf-8 22.5542ms
+2022-12-16 01:01:50.614 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?HouseNumber=137 - -
+2022-12-16 01:01:50.614 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:50.615 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:01:50.618 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:01:50.622 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:01:50.624 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":137,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:01:50.630 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:50.631 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:01:50.633 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where HouseNumber = '137' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:01:50.634 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:01:50.635 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 17.2747ms
+2022-12-16 01:01:50.638 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:01:50.639 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?HouseNumber=137 - - - 200 - application/json;+charset=utf-8 25.0749ms
+2022-12-16 01:02:16.217 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?City=East%20Falmouth%20MA - -
+2022-12-16 01:02:16.220 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:16.221 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:02:16.223 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:02:16.224 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:02:16.226 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":"East Falmouth MA","Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:02:16.231 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:16.232 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:16.234 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where City = 'East Falmouth MA' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:02:16.236 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:02:16.237 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 15.2213ms
+2022-12-16 01:02:16.238 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:16.239 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?City=East%20Falmouth%20MA - - - 200 - application/json;+charset=utf-8 21.8314ms
+2022-12-16 01:02:22.525 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?Country=USA - -
+2022-12-16 01:02:22.526 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:22.526 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:02:22.528 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:02:22.531 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:02:22.534 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":null,"Country":"USA","$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:02:22.540 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:22.541 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:22.544 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where Country = 'USA' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:02:22.545 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:02:22.547 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 19.7867ms
+2022-12-16 01:02:22.549 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:22.549 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?Country=USA - - - 200 - application/json;+charset=utf-8 24.5695ms
+2022-12-16 01:02:31.023 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?Country=United%20States - -
+2022-12-16 01:02:31.024 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:31.025 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:02:31.027 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:02:31.029 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:02:31.030 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":null,"Country":"United States","$type":"QueryParameters"},"sortCriteria":{"OrderBy":null,"Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:02:31.036 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:31.037 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:31.039 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses where Country = 'United States' 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:02:31.041 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:02:31.042 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 15.8269ms
+2022-12-16 01:02:31.043 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:31.044 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?Country=United%20States - - - 200 - application/json;+charset=utf-8 20.6778ms
+2022-12-16 01:02:48.847 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7222/api/Addresses?OrderBy=zipcode - -
+2022-12-16 01:02:48.848 +01:00 [INF] Executing endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:48.849 +01:00 [INF] Route matched with {action = "GetAddresses", controller = "Addresses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SocialBrothers.APIcase.Domain.Entities.Address]]] GetAddresses(SocialBrothers.APIcase.Domain.Common.PaginationParameters, SocialBrothers.APIcase.Domain.Common.QueryParameters, SocialBrothers.APIcase.Domain.Common.SortCriteria) on controller SocialBrothers.APIcase.Presentation.Controllers.AddressesController (SocialBrothers.APIcase.Presentation).
+2022-12-16 01:02:48.852 +01:00 [INF] Entity Framework Core 6.0.11 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:6.0.11' with options: None
+2022-12-16 01:02:48.854 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2022-12-16 01:02:48.856 +01:00 [INF] GetAddresses Method is invoked with parameters {"paginationParameters":{"PageIndex":1,"PageSize":20,"$type":"PaginationParameters"},"queryParameters":{"Street":null,"HouseNumber":null,"ZipCode":null,"City":null,"Country":null,"$type":"QueryParameters"},"sortCriteria":{"OrderBy":"zipcode","Desc":false,"$type":"SortCriteria"}}
+2022-12-16 01:02:48.862 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:48.863 +01:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-12-16 01:02:48.866 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_2='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."City", "s"."Country", "s"."HouseNumber", "s"."Street", "s"."ZipCode"
+FROM (
+    select * from Addresses order by zipcode 
+) AS "s"
+LIMIT @__p_2 OFFSET @__p_1
+2022-12-16 01:02:48.867 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SocialBrothers.APIcase.Domain.Entities.Address, SocialBrothers.APIcase.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-12-16 01:02:48.868 +01:00 [INF] Executed action SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation) in 16.8046ms
+2022-12-16 01:02:48.869 +01:00 [INF] Executed endpoint 'SocialBrothers.APIcase.Presentation.Controllers.AddressesController.GetAddresses (SocialBrothers.APIcase.Presentation)'
+2022-12-16 01:02:48.870 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7222/api/Addresses?OrderBy=zipcode - - - 200 - application/json;+charset=utf-8 23.2399ms

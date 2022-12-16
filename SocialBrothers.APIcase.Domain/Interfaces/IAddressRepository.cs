@@ -1,10 +1,8 @@
-﻿using SocialBrothers.APIcase.Domain.Common;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+using SocialBrothers.APIcase.Domain.Common;
 using SocialBrothers.APIcase.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocialBrothers.APIcase.Domain.Interfaces;
 public interface IAddressRepository

@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+
+using AutoMapper;
 using SocialBrothers.APIcase.Domain.Entities;
 using SocialBrothers.APIcase.Presentation.DTOs;
 

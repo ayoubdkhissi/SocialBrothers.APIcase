@@ -1,4 +1,7 @@
-﻿namespace SocialBrothers.APIcase.Presentation.DTOs;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+namespace SocialBrothers.APIcase.Presentation.DTOs;
 
 /// <summary>
 /// Data Transfer object for an Address entity.

@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+
+using Microsoft.EntityFrameworkCore;
 using SocialBrothers.APIcase.Domain.Entities;
 
 namespace SocialBrothers.APIcase.Infrastructure;

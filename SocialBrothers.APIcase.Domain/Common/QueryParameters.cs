@@ -1,4 +1,7 @@
-﻿namespace SocialBrothers.APIcase.Domain.Common;
+﻿/**
+ * @author: AYOUB DKHISSI 
+ */
+namespace SocialBrothers.APIcase.Domain.Common;
 
 public class QueryParameters
 {
