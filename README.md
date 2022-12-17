@@ -53,7 +53,7 @@ PS: For a production senario I wouls definetly go with OData.
 * For unit testing I have used **XUnit** as a testing tool, **FakeItEasy** for mocking dependencies and method calls, and **Fluent assertions** to make assertions more readable. 
 * Full test of the Contorller: I have introduced multiple unit tests for each controller action and verified the return result for different cases
 * There was really not much testing to do except for the controller (there is no much Business Logic)
-* I didn't introduced tests for the repository service, because it is straigth forward EF Core functionalities, it is pointless to test them.
+* I didn't introduce tests for the repository service, because it is straigth forward EF Core functionalities, it is pointless to test them.
 * I wanted to test the Distances action but I couldn't, because it is a little bit more complex. 
 
 ## Notes
