@@ -47,6 +47,7 @@ PS: For a production senario I wouls definetly go with OData.
 * Dependency Injection: all used services in the cotroller are injected (mapper, validator, repository, logger, httpClient, DbContext...)
 * Solid Principles are well respected
 * I could have used a Method Factory pattern to create Address objects, but that would only add more complexity, so I decided to Keep It Simple Stupid (KISS). 
+* I could have also used a **Remote Proxy** pattern to provide a local representative for the external geolocation API.
 
 ## Unit Testing
 * For unit testing I have used **XUnit** as a testing tool, **FakeItEasy** for mocking dependencies and method calls, and **Fluent assertions** to make assertions more readable. 
